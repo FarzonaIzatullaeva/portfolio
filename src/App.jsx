@@ -26,6 +26,12 @@ const skills = [
   {name: "C++", logo: "/skillLogos/cplusplus.png"},
 ];
 
+const projects = [
+  {title: "Project 1", description: "Decription of project 1", tags:["React", "API"], repo: "link to github repo", demo: "", image: "/projects/project1.png",},
+  {title: "Project 2", description: "Decription of project 2", tags:["React", "API"], repo: "link to github repo", demo: "", image: "/projects/project2.png",},
+  {title: "Project 3", description: "Decription of project 3", tags:["React", "API"], repo: "link to github repo", demo: "", image: "/projects/project3.png",}
+];
+
 
   return (
     <>
@@ -52,6 +58,34 @@ const skills = [
               <img src={skill.logo} alt={skill.name} />
               <p>{skill.name}</p>
             </div>
+          ))}
+        </div>
+
+        <h2>Projects</h2>
+        <div className="projectsGrid">
+          {projects.map((p)=>(
+            <article key={p.title}>
+            {p.image ? (<img src={p.image} alt={`${p.title} preview`}></img>) : null}
+            <div>
+              <h3>{p.title}</h3>
+              <p>{p.description}</p>
+              <div>
+                {p.tags.map((t) => (
+                  <span key={t}>{t}</span>
+                ))}
+              </div>
+
+              <div>
+                {p.repo && (
+                  <a href={p.repo} target='_blank'>Github</a>
+                )}
+
+                {p.demo &&(
+                  <a href={p.demo} target='_blank'>Live Demo</a>
+                )}
+              </div>
+            </div>
+            </article>
           ))}
         </div>
       </div>
