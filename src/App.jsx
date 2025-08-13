@@ -52,12 +52,12 @@ const projects = [
           <a href={githubLink} target='_blank' className='inline-flex items-center gap-2 px-4 py-4 rounded-lg font-medium hover:text-pink-500 transition duration-150'>GitHub</a>
         </div>
 
-        <h2>Skills</h2>
-        <div className="skillsGrid">
+        <h2 className='text-2xl font-semibold mb-6'>Skills</h2>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
           {skills.map((skill) => (
-            <div key={skill.name} className="skill">
-              <img src={skill.logo} alt={skill.name} />
-              <p>{skill.name}</p>
+            <div key={skill.name} className="flex flex-col items-center gap-2 p-4 bg-white rounded-xl border border-gray-200 shadow-card hover:shadow-md transition">
+              <img src={skill.logo} alt={skill.name} className='w-12 h-12 object-contain' />
+              <p className="text-sm font-medium">{skill.name}</p>
             </div>
           ))}
         </div>
