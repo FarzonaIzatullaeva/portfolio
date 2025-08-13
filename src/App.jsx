@@ -35,20 +35,21 @@ const projects = [
 
   return (
     <>
-      <div>
-        <img src={headshot} alt={`${fullName} headshot`} />
-        <h1>Hello, I am {fullName}</h1>
-        <h2>{`${university}'28`}</h2>
-        <h3>Major: {major}</h3>
-        <p>I'm a driven computer science student passionate about AI, software engineering, and creating impactful tech solutions.</p>
-
+      <div className='max-w-5xl mx-auto px-6 py-10 space-y-16'>
         <div>
-          <img src={resumeIcon} alt="" />
-          <a href={resume} download>Download Resume</a>
+          <img src={headshot} alt={`${fullName} headshot`} className='w-50 h-50 rounded-full object-cover border-4 border-brand-500'/>
+          <h1 className='text-3xl font-bold'>Hello, I am {fullName}</h1>
+        <h2 className='text-lg text-gray-600'>{`${university}'28`}</h2>
+        <h3 className='text-gray-500'>Major: {major}</h3>
+        <p className='max-w-xl mx-auto text-gray-700'>I'm a driven computer science student passionate about AI, software engineering, and creating impactful tech solutions.</p>
+      </div>
+
+        <div className='flex justify-center gap-4 flex-wrap mt-4'>
+          <a href={resume} download className='inline-flex items-center gap-2 px-4 py-4 rounded-lg font-medium transition duration-150 bg-blue-500 text-white hover:bg-blue-700'>Download Resume</a>
           <img src={linkedInLogo} alt="" />
-          <a href={linkedInLink} target='_blank'>LinkedIn</a>
+          <a href={linkedInLink} target='_blank' className='inline-flex items-center gap-2 px-4 py-4 rounded-lg font-medium hover:text-pink-500 transition duration-150'>LinkedIn</a>
           <img src={githubLogo} alt="" />
-          <a href={githubLink} target='_blank'>GitHub</a>
+          <a href={githubLink} target='_blank' className='inline-flex items-center gap-2 px-4 py-4 rounded-lg font-medium hover:text-pink-500 transition duration-150'>GitHub</a>
         </div>
 
         <h2>Skills</h2>
